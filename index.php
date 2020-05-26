@@ -1,5 +1,5 @@
 <?php
-function incrementFileName($file_path,$filename){
+    function incrementFileName($file_path,$filename){  //function to increment file name id there is a clash
               $array = explode(".", $filename);
               $file_ext = end($array);
               $root_name = str_replace(('.'.$file_ext),"",$filename);
