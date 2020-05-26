@@ -1,3 +1,4 @@
+<?php
 function incrementFileName($file_path,$filename){
               $array = explode(".", $filename);
               $file_ext = end($array);
@@ -44,3 +45,4 @@ function incrementFileName($file_path,$filename){
               move_uploaded_file($_FILES[$name]['tmp_name'], $path); 
             } 
            
+?>
