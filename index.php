@@ -1,5 +1,5 @@
 <?php
-    function incrementFileName($file_path,$filename){  //function to increment file name id there is a clash
+    function incrementFileName($file_path,$filename){  //function to increment file name if there is a clash
               $array = explode(".", $filename);
               $file_ext = end($array);
               $root_name = str_replace(('.'.$file_ext),"",$filename);
@@ -12,7 +12,7 @@
               return $file;
             }
     
-      function uploadImage($name)
+      function uploadImage($name) //function to handle file upload
         {
            
            $folder ="uploads/"; 
@@ -38,9 +38,9 @@
              }
 
         else{ 
-              if (file_exists($path)) 
+              if (file_exists($path)) //checking if a file clash exists 
               {
-                $path=incrementFileName("uploads/",$_FILES[$name]["name"]);  
+                $path=incrementFileName("uploads/",$_FILES[$name]["name"]);  //handling clash that exist
               }
               move_uploaded_file($_FILES[$name]['tmp_name'], $path); 
             } 
